@@ -1,0 +1,45 @@
+<!-- src/app/home/home.component.html -->
+<div class="home-container">
+  <h2>Explore Questions</h2>
+
+    <div class="button-group">
+    <button type="button" class="btn danger" (click)="goBack()">Back</button>
+  </div>
+
+  <form (ngSubmit)="onFilterSubmit()" #filterForm="ngForm">
+    <select [(ngModel)]="selectedLanguage" name="language" required (change)="onLanguageChange()">
+      <option value="">Select Language</option>
+      <option *ngFor="let lang of languages" [value]="lang">{{ lang }}</option>
+    </select>
+
+    <select [(ngModel)]="selectedTopic" name="topic" required>
+      <option value="">Select Topic</option>
+      <option *ngFor="let topic of topics" [value]="topic">{{ topic }}</option>
+    </select>
+
+    <select [(ngModel)]="selectedLevel" name="level" required>
+      <option value="">Select Difficulty</option>
+      <option *ngFor="let level of levels" [value]="level">{{ level }}</option>
+    </select>
+
+    <button type="submit" [disabled]="filterForm.invalid">Submit</button>
+    <button type="button" (click)="resetFilters()">Reset</button>
+  </form>
+
+  <div *ngIf="loading">Loading questions...</div>
+
+  <div *ngIf="!loading && questions.length === 0">
+    <p>No questions found. Try changing the filters.</p>
+  </div>
+
+  <div *ngFor="let q of questions" class="question-card">
+    <h4>{{ q.question }}</h4>
+    <p><strong>Answer:</strong> {{ q.answer }}</p>
+  </div>
+
+  <div *ngIf="totalPages > 1" class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="currentPage === 0">Previous</button>
+    <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage + 1 === totalPages">Next</button>
+  </div>
+</div>

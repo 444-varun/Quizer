@@ -1,0 +1,31 @@
+<div class="update-container">
+  <h2>Update Question</h2>
+
+  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label>Language</label>
+      <input type="text" formControlName="language" />
+    </div>
+    <div class="form-field">
+      <label>Topic</label>
+      <input type="text" formControlName="topic" />
+    </div>
+    <div class="form-field">
+      <label>Level</label>
+      <input type="text" formControlName="level" />
+    </div>
+    <div class="form-field">
+      <label>Question</label>
+      <textarea formControlName="question"></textarea>
+    </div>
+    <div class="form-field">
+      <label>Answer</label>
+      <textarea formControlName="answer"></textarea>
+    </div>
+
+    <div class="button-group">
+      <button type="submit" class="btn primary" [disabled]="updateForm.invalid">Update Question</button>
+      <button type="button" class="btn danger" (click)="goBack()">Back</button>
+    </div>
+  </form>
+</div>

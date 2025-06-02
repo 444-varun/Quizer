@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="navbar__logo" (click)="navigateTo('home')">
+    Quizer<span class="navbar__dot">.</span>
+  </div>
+  <ul class="navbar__menu">
+    <li class="navbar__item">
+      <a routerLink="/profile" *ngIf="showProfileOrHome === 'profile'">{{ showProfileOrHome | titlecase }}</a>
+      <a routerLink="/home" *ngIf="showProfileOrHome !== 'profile'">Home</a>
+    </li>
+    <li class="navbar__item">
+      <a routerLink="/exam" *ngIf="showExamOrHome === 'exam'">{{ showExamOrHome | titlecase }}</a>
+      <a routerLink="/home" *ngIf="showExamOrHome !== 'exam'">Home</a>
+    </li>
+    <li class="navbar__item">
+      <a routerLink="/contact">Contact</a>
+    </li>
+    <li>
+      <button class="navbar__item logout-button" (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</nav>

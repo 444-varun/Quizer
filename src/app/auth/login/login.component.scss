@@ -1,0 +1,104 @@
+/* Shared container style */
+.container-shared {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px 25px;
+  background: var(--background-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+}
+
+/* Heading style */
+.container-shared h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Forms */
+form {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+/* Inputs & selects */
+input, select {
+  flex: 1 1 180px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 2px solid var(--border-light);
+  border-radius: 8px;
+  background-color: white;
+  color: var(--text-dark);
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 6px rgba(90,103,216,0.67); /* semi-transparent primary */
+}
+
+/* Buttons */
+button[type="submit"], button[type="button"] {
+  padding: 11px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  flex: 1 1 120px;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+button[type="submit"]:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+button[type="submit"]:not(:disabled):hover {
+  background-color: var(--primary-hover);
+}
+
+button[type="button"] {
+  background-color: #e2e8f0;
+  color: var(--text-dark);
+}
+
+button[type="button"]:hover {
+  background-color: var(--border-light);
+}
+
+/* Specific styling for question/answer list */
+.container-shared > div.question-item {
+  background: white;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-left: 5px solid var(--primary-color);
+}
+
+.container-shared > div.question-item h4 {
+  margin: 0 0 8px 0;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.container-shared > div.question-item p {
+  margin: 0;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.4;
+}

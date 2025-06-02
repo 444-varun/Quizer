@@ -1,0 +1,47 @@
+<div class="search-container">
+  <h2>Search Questions to Update</h2>
+
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="query" placeholder="Enter question keyword" />
+    <button class="primary" (click)="search()">Search</button>
+  </div>
+
+  <table *ngIf="questions.length">
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Answer</th>
+        <th>Lang</th>
+        <th>Topic</th>
+        <th>Level</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let q of questions">
+        <td>{{ q.question }}</td>
+        <td>{{ q.answer }}</td>
+        <td>{{ q.language }}</td>
+        <td>{{ q.topic }}</td>
+        <td>{{ q.level }}</td>
+        <td>
+          <div class="action-buttons">
+            <button class="update-btn" (click)="goToUpdate(q.queId)">Update</button>
+            <button class="delete-btn" (click)="deleteQue(q.queId)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="page === 0">Prev</button>
+    <span>Page {{ page + 1 }} / {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="page + 1 >= totalPages">Next</button>
+  </div>
+
+  <!-- 🔙 Back Button -->
+  <div class="button-group">
+    <button type="button" class="btn danger" (click)="goBack()">Back</button>
+  </div>
+</div>

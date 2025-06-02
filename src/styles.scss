@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #5a67d8;      /* the blue */
+  --primary-hover: #434190;      /* darker blue */
+  --background-light: #f9f9f9;   /* off-white */
+  --text-dark: #2d3748;          /* dark text */
+  --text-muted: #4a5568;         /* muted text */
+  --border-light: #cbd5e1;       /* light gray border */
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

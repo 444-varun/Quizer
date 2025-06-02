@@ -1,0 +1,22 @@
+<div class="container-register" style="max-width: 400px; margin-top: 80px; padding: 28px 25px;">
+  <h2>Create your Quizer account</h2>
+
+  <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+    <input type="text" name="username" [(ngModel)]="registerData.username" required placeholder="Username" />
+    <input type="email" name="email" [(ngModel)]="registerData.email" required placeholder="Email" />
+    <input type="password" name="password" [(ngModel)]="registerData.password" required placeholder="Password" />
+    
+    <!-- <select name="role" [(ngModel)]="registerData.role" required>
+      <option value="" disabled selected>Select Role</option>
+      <option value="ROLE_USER">User</option>
+      <option value="ROLE_ADMIN">Admin</option>
+    </select> -->
+
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
+
+  <p style="text-align:center; margin-top: 15px;">
+    Already have an account? <a routerLink="/login">Login</a>
+  </p>
+</div>
+

@@ -1,0 +1,84 @@
+/* Register page container reusing shared container style */
+.container-register {
+  max-width: 400px; /* a bit narrower like login */
+  margin: 50px auto 80px; /* balanced vertical spacing */
+  padding: 28px 25px;
+  background: var(--background-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+}
+
+/* Heading style */
+.container-register h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 35px;
+}
+
+/* Inputs and select */
+input, select {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 2px solid var(--border-light);
+  border-radius: 8px;
+  background-color: white;
+  color: var(--text-dark);
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 6px rgba(90,103,216,0.67);
+}
+
+/* Buttons */
+button[type="submit"] {
+  padding: 11px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.25s ease;
+}
+
+button[type="submit"]:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+button[type="submit"]:not(:disabled):hover {
+  background-color: var(--primary-hover);
+}
+
+/* Link to login text */
+p.login-link {
+  text-align: center;
+  margin-top: 15px;
+  color: var(--text-muted);
+
+  a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--primary-hover);
+    }
+  }
+}

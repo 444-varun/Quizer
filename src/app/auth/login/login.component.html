@@ -1,0 +1,13 @@
+<!-- For Login -->
+<div class="container-shared" style="max-width: 400px; margin-top: 80px; padding: 28px 25px;">
+  <h2>Welcome to Quizer</h2>
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+    <input type="text" name="username" [(ngModel)]="username" required placeholder="Username" />
+    <input type="password" name="password" [(ngModel)]="password" required placeholder="Password" />
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+  <button type="button" (click)="skipLogin()" style="margin-top: 10px; width: 100%;">Skip & Explore</button>
+  <p style="text-align:center; margin-top: 15px;">
+  Don't have an account? <a routerLink="/register">Register</a>
+</p>
+</div>

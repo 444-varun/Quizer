@@ -1,0 +1,39 @@
+
+$primary-color: #f0f4f8;      // Soft light gray background for navbar
+$accent-color: #ef4444;       // Bright red accent (similar crimson but lighter)
+$text-color: #1f2937;         // Dark slate text for readability on light bg
+$footer-bg: #e2e8f0;          // Light gray footer background
+$footer-text: #4b5563; 
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $footer-bg;
+  color: $footer-text;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 0;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+.footer__content p {
+  margin: 0;
+  a {
+    color: $footer-text;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 0.3rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}

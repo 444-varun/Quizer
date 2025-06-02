@@ -1,0 +1,19 @@
+<div class="admin-container">
+
+  <!-- Questions Section -->
+  <section class="admin-section">
+    <h3>Questions</h3>
+    <button class="btn primary" (click)="navigateToAddQuestion()">Add Question</button>
+    <button class="btn" (click)="navigateToViewQuestions()">View All Questions</button>
+    <button class="btn" (click)="navigateToUpdateQuestions()">Update Questions</button>
+  </section>
+
+  <!-- Exams Section -->
+  <section class="admin-section">
+    <h3>Exams</h3>
+    <button class="btn primary" (click)="navigateToAddExam()">Add Exam Questions</button>
+    <button class="btn" (click)="navigateToViewExams()">View All Exam Questions</button>
+  </section>
+
+  <router-outlet></router-outlet>
+</div>
